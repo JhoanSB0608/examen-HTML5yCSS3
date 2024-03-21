@@ -26,13 +26,14 @@ header {
 
 header .iconoCar {
     height: 100%;
-    width: 10%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
     font-size: 2rem;
-    color: var(--color-white);
+    color: var(--color-gray);
+    background-color: var(--color-white);
 }
 
 header ul {
@@ -59,4 +60,667 @@ header ul li {
 header ul li a {
     color: var(--color-white);
     font-size: 2.5vh;
+}
+
+main {
+    top: 50px;
+    padding: 10px;
+    display: grid;
+    place-content: center;
+    grid-template: repeat(10, 1fr) / 85%;
+    gap: 20px;
+}
+
+.iconocar i,
+.iconocar sup,
+.productoPopUp i {
+    cursor: pointer;
+    font-size: 3vh;
+}
+
+.iconocar sup {
+    font-size: 1rem;
+    color: var(--color-gray);
+}
+
+input {
+    display: none;
+}
+
+#car:checked+.carPopUp {
+    opacity: 1;
+    height: 800px;
+    width: 600px;
+}
+
+.carPopUp {
+    position: fixed;
+    opacity: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    border: 2px solid var(--color-gray);
+    transition: all 0.2s ease;
+    font-weight: normal;
+}
+
+.carPopUp label {
+    width: 32px;
+    height: 20px;
+    position: relative;
+    left: 275px;
+}
+
+.carPopUp h2 {
+    font-size: 2rem;
+}
+
+.carCarrusel {
+    display: grid;
+    width: 90%;
+    height: 75%;
+    gap: 10px;
+    overflow: hidden;
+    grid-template-rows: repeat(6, 150px);
+    overflow-y: scroll;
+}
+
+.carProducto {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    color: white;
+    background-color: var(--color-black);
+    padding: 10px;
+}
+
+.carProductoImg img {
+    width: 100%;
+    height: 65%;
+    object-fit: contain;
+}
+
+.carProductoDescripcion {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    font-size: 1rem;
+}
+
+.carProductoDescripcion :last-child {
+    text-align: center;
+    width: 30%;
+    height: 25px;
+    overflow: hidden;
+    border: 1px solid var(--color-white);
+
+}
+
+.carProductoPrecio {
+    display: grid;
+    place-content: center;
+    font-size: 1.5rem;
+}
+
+.carTotal {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    margin-top: 10px;
+    padding: 10px;
+    width: 90%;
+    height: 12%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.carTotalPagar button {
+    cursor: pointer;
+    width: 100%;
+    height: 40%;
+    border-radius: 0;
+    border: 0;
+    font-weight: bold;
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.producto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 15px;
+    gap: 15px;
+}
+
+.producto .galeria {
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    height: 45vh;
+}
+
+.galeria {
+    height: 100%;
+    gap: 15px;
+}
+
+.galeria :last-child {
+    grid-area: 1 / 2 / 5 / 5;
+    width: 100%;
+    height: 100%;
+}
+
+.galeria .imagen img {
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 100%;
+    object-fit: contain;
+}
+
+.imagen {
+    background-color: white;
+    height: 10vh;
+    width: 15vh;
+}
+
+.producto .descripcion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.producto .descripcion h2 {
+    font-size: 3rem;
+}
+
+.producto .descripcion .descripcionStars {
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.producto .descripcion precio {
+    width: 35%;
+    margin-block: 20px;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.producto .descripcion small {
+    font-size: 1.5rem;
+}
+
+.producto a {
+    margin-top: 30px;
+}
+
+.producto .obtenerButton,
+.producto .labelPUF {
+    display: grid;
+    place-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 180px;
+    height: 50px;
+    background-color: var(--color-gray);
+    border: 0;
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+#productoPopUp:checked+.productoPopUp {
+    opacity: 1;
+    height: 700px;
+    width: 600px;
+}
+
+.productoPopUp {
+    position: fixed;
+    opacity: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    border: 2px solid var(--color-gray);
+    transition: all 0.2s ease;
+    font-weight: normal;
+}
+
+.productoPopUp label i {
+    font-size: 2rem;
+}
+
+.productoPopUp label:first-child {
+    width: 32px;
+    height: 40px;
+    position: relative;
+    top: 5px;
+    left: 275px;
+}
+
+.productoPopUpImagen {
+    height: 50%;
+    width: 90%;
+}
+
+.productoPopUpImagen img {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+
+.productoPopUp h3 {
+    font-size: 1.8rem
+}
+
+.productoPopUpDescripcion {
+    margin-top: 10px;
+    width: 90%;
+}
+
+.productoPopUpDescripcion .descripcionStarsSmall {
+    font-size: .75rem;
+}
+
+.productoPopUpPrecio {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    width: 34%;
+    justify-content: space-between;
+    display: flex;
+    align-items: flex-end;
+}
+
+.productoPopUpAgregar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30%;
+}
+
+.productoPopUpAgregar :first-child {
+    font-size: 3rem;
+    overflow: hidden;
+    text-align: center;
+    height: 75px;
+    width: 45%;
+    border: 1px solid var(--color-black);
+    border-radius: 10px;
+}
+
+.productoPopUpAgregar label {
+    height: 75px;
+    display: grid;
+    place-content: center;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 50%;
+}
+
+
+
+@media (max-width: 765px) {
+    body {
+        width: 100vw;
+        max-width: 100vw;
+        overflow: hidden;
+        height: 100vh;
+        display: grid;
+        grid-template: 1fr / 1fr;
+        overflow-y: scroll;
+    }
+
+    header {
+        display: none;
+    }
+
+    main {
+        top: 50px;
+        padding: 10px;
+        display: grid;
+        place-content: center;
+        grid-template: repeat(10, 1fr) / 85%;
+        gap: 20px;
+    }
+
+    .iconocar i,
+    .iconocar sup,
+    .productoPopUp i {
+        cursor: pointer;
+    }
+
+    .iconocar sup {
+        font-size: 1rem;
+    }
+
+    input {
+        display: none;
+    }
+
+    #car:checked+.carPopUp {
+        opacity: 1;
+        height: 800px;
+        width: 600px;
+    }
+
+    .carPopUp {
+        position: fixed;
+        opacity: 0;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        color: var(--color-black);
+        background-color: var(--color-white);
+        border: 2px solid var(--color-gray);
+        transition: all 0.2s ease;
+        font-weight: normal;
+    }
+
+    .carPopUp label {
+        width: 32px;
+        height: 20px;
+        position: relative;
+        left: 275px;
+    }
+
+    .carPopUp h2 {
+        font-size: 2rem;
+    }
+
+    .carCarrusel {
+        display: grid;
+        width: 90%;
+        height: 75%;
+        gap: 10px;
+        overflow: hidden;
+        grid-template-rows: repeat(6, 150px);
+        overflow-y: scroll;
+    }
+
+    .carProducto {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 1fr;
+        color: white;
+        background-color: var(--color-black);
+        padding: 10px;
+    }
+
+    .carProductoImg img {
+        width: 100%;
+        height: 65%;
+        object-fit: contain;
+    }
+
+    .carProductoDescripcion {
+        display: grid;
+        place-content: center;
+        place-items: center;
+        font-size: .5rem;
+    }
+
+    .carProductoDescripcion :last-child {
+        text-align: center;
+        width: 30%;
+        height: 25px;
+        overflow: hidden;
+        border: 1px solid var(--color-white);
+
+    }
+
+    .carProductoPrecio {
+        display: grid;
+        place-content: center;
+        font-size: 1.5rem;
+    }
+
+    .carTotal {
+        background-color: var(--color-black);
+        color: var(--color-white);
+        margin-top: 10px;
+        padding: 10px;
+        width: 90%;
+        height: 12%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .carTotalPagar button {
+        cursor: pointer;
+        width: 100%;
+        height: 40%;
+        border-radius: 0;
+        border: 0;
+        font-weight: bold;
+        background-color: var(--color-white);
+        color: var(--color-black);
+    }
+
+    .producto {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        background-color: var(--color-black);
+        color: var(--color-white);
+        padding: 15px;
+        gap: 15px;
+        height: 97vh;
+    }
+
+    .producto .galeria {
+        display: grid;
+        grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    }
+
+    .galeria {
+        height: 100%;
+        gap: 15px;
+    }
+
+    .galeria :last-child {
+        grid-area: 1 / 2 / 5 / 5;
+        width: 100%;
+        height: 100%;
+    }
+
+    .galeria .imagen img {
+        width: 100%;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .imagen {
+        background-color: white;
+        height: 10vh;
+        width: 15vh;
+    }
+
+    .producto .descripcion {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .producto .descripcion h2 {
+        font-size: 1.5rem;
+        padding-top: 5px;
+    }
+
+    .producto .descripcion .descripcionStars {
+        font-size: 1rem;
+        margin-bottom: 0;
+        padding-top: 5px;
+    }
+
+    .producto .descripcion precio {
+        width: 35%;
+        margin-block: 10px;
+        font-size: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+    }
+
+    .producto .descripcion precio small {
+        font-size: 1.5rem;
+        padding-left: 10px;
+    }
+
+    .producto a {
+        margin-top: 30px;
+    }
+
+    .producto .obtenerButton,
+    .producto .labelPUF {
+        display: grid;
+        place-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        width: 180px;
+        height: 50px;
+        background-color: var(--color-gray);
+        border: 0;
+        color: var(--color-white);
+        cursor: pointer;
+    }
+
+    #productoPopUp:checked+.productoPopUp {
+        opacity: 1;
+        height: 85vh;
+        width: 90vw;
+    }
+
+    .productoPopUp {
+        position: fixed;
+        opacity: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        color: var(--color-black);
+        background-color: var(--color-white);
+        border: 2px solid var(--color-gray);
+        transition: all 0.2s ease;
+        font-weight: normal;
+    }
+
+    .productoPopUp label i {
+        font-size: 2rem;
+    }
+
+    .productoPopUp label:first-child {
+        width: 32px;
+        height: 40px;
+        position: relative;
+        top: 5px;
+        left: 150px;
+    }
+
+    .productoPopUpImagen {
+        height: 50%;
+        width: 90%;
+    }
+
+    .productoPopUpImagen img {
+        height: 100%;
+        object-fit: contain;
+        width: 100%;
+    }
+
+    .productoPopUp h3 {
+        font-size: 1.8rem
+    }
+
+    .productoPopUpDescripcion {
+        width: 90%;
+    }
+
+    .productoPopUpDescripcion .descripcionStarsSmall {
+        font-size: .75rem;
+    }
+
+    .productoPopUpPrecio {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        width: 34%;
+        justify-content: space-between;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .productoPopUpPrecio sub {
+        padding-left: 10px;
+    }
+
+    .productoPopUpAgregar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 30%;
+    }
+
+    .productoPopUpAgregar :first-child {
+        font-size: 3rem;
+        overflow: hidden;
+        text-align: center;
+        height: 75px;
+        width: 45%;
+        border: 1px solid var(--color-black);
+        border-radius: 10px;
+    }
+
+    .productoPopUpAgregar label {
+        height: 75px;
+        display: grid;
+        place-content: center;
+        background-color: var(--color-black);
+        color: var(--color-white);
+        font-weight: bold;
+        font-size: 1.5rem;
+        cursor: pointer;
+        width: 50%;
+    }
 }
